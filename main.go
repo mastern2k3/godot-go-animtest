@@ -31,4 +31,8 @@ func (h *Simple) X_Ready() {
 
 	anim := h.GetNode(gd.NewNodePath("anim")).(godot.AnimationPlayerImplementer)
 	anim.Play("wobble", 1.0, -1.0, false)
+
+	len := anim.GetCurrentAnimationLength()
+
+	godot.Log.Warning("len:", len)
 }
