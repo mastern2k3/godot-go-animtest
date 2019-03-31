@@ -30,16 +30,9 @@ func main() {
 func (h *Simple) X_Ready() {
 
 	anim := h.GetNode(gd.NewNodePath("anim")).(godot.AnimationPlayerImplementer)
-	// anim.Play("wobble", 1.0, -1.0, false)
-	arr := gd.NewArray()
-	arr.PushBack(gd.NewVariantString("wobble"))
-	arr.PushBack(gd.NewVariantReal(1))
-	arr.PushBack(gd.NewVariantReal(-1))
-	arr.PushBack(gd.NewVariantBool(false))
-	anim.Callv("play", arr)
+	anim.Play("wobble", 1.0, -1.0, false)
 
-	// len := anim.GetCurrentAnimationLength()
-	len := anim.Get("current_animation_length")
+	len := anim.GetCurrentAnimationLength()
 
-	godot.Log.Warning("len:", len.AsReal())
+	godot.Log.Warning("len:", len)
 }
