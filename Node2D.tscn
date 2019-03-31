@@ -3,13 +3,12 @@
 [ext_resource path="res://godotgo.gdnlib" type="GDNativeLibrary" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-[sub_resource type="NativeScript" id=2]
+[sub_resource type="NativeScript" id=1]
 resource_name = "Simple"
 class_name = "main.Simple"
 library = ExtResource( 1 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "wobble"
+[sub_resource type="Animation" id=2]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -26,10 +25,10 @@ tracks/0/keys = {
 }
 
 [node name="Node2D" type="Node2D"]
-script = SubResource( 2 )
+script = SubResource( 1 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
-anims/wobble = SubResource( 1 )
+anims/wobble = SubResource( 2 )
 
 [node name="icon" type="Sprite" parent="anim"]
 position = Vector2( 334.993, 276 )
